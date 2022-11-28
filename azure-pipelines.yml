@@ -36,6 +36,5 @@ steps:
     testType: 'container'
     dockerImageName: 'goof'
     dockerfilePath: 'Dockerfile'
-    severityThreshold: 'critical'
     monitorWhen: 'always'
     failOnIssues: true
