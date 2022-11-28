@@ -21,11 +21,23 @@ steps:
     testType: 'app'
     severityThreshold: 'critical'
     monitorWhen: 'always'
-    failOnIssues: true
+    failOnIssues: false
 
-#- script: |
-    #docker build -t goof
-    #docker images 
-    #docker images | grep goof
-    #sudo docker images | grep goof
-  #displayName: 'build Docker image'
+- script: |
+    docker build -t goof
+    docker images 
+    docker images | grep goof
+    sudo docker images | grep goof
+  displayName: 'build Docker image'
+  condition: 
+
+  - task: SnykSecurityScan@1
+    inputs:
+      serviceConnectionEndpoint: 'Goof'
+      testType: 'container'
+      dockerImageName: 'goof'
+      dockerfilePath: 'Dockerfile'
+      severityThreshold: 'critical'
+      monitorWhen: 'always'
+      failOnIssues: true
+
