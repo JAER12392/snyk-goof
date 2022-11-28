@@ -24,7 +24,7 @@ steps:
     failOnIssues: false
 
 - script: |
-    docker build -t goof
+    docker build -t goof .
     docker images 
     docker images | grep goof
     sudo docker images | grep goof
