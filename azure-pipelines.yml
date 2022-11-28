@@ -30,7 +30,6 @@ steps:
     sudo docker images | grep goof
   displayName: 'build Docker image'
 
-
   - task: SnykSecurityScan@1
     inputs:
       serviceConnectionEndpoint: 'Goof'
