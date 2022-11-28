@@ -29,7 +29,6 @@ steps:
     docker images | grep goof
     sudo docker images | grep goof
   displayName: 'build Docker image'
-  condition: 
 
   - task: SnykSecurityScan@1
     inputs:
