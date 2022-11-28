@@ -15,6 +15,14 @@ steps:
     npm run build
   displayName: 'npm install and build'
 
+- task: SnykSecurityScan@1
+  inputs:
+    serviceConnectionEndpoint: 'Goof'
+    testType: 'app'
+    severityThreshold: 'critical'
+    monitorWhen: 'always'
+    failOnIssues: true
+
 #- script: |
     #docker build -t goof
     #docker images 
