@@ -17,7 +17,7 @@ steps:
   - script: |
       node - v
       npm - v
-      npm install - g snyk
+      npm install -g snyk
       snyk -v 
       dir 
       snyk auth 'bd0a621f-e440-4b09-8791-dd261466fcd0'
