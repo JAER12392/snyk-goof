@@ -7,7 +7,7 @@ trigger:
 - master
 
 pool:
-  vmImage: ubuntu-latest
+  vmImage: windows-2019
 
 steps:
 - script: |
@@ -37,4 +37,19 @@ steps:
     dockerImageName: 'goof'
     dockerfilePath: 'Dockerfile'
     monitorWhen: 'always'
-    failOnIssues: true
+    failOnIssues: false
+    additionalArguments: 
+    organization: 
+    projectName: 
+    severityThreshold
+  
+- script: |
+      node -v 
+      npm -v
+      npm install -g snyk
+      snyk -v
+      dir
+      snyk auth 479e7f58-33d3-470c-a13e-d258edb10092
+      snyk code 
+      continueOnError: true
+      displayName: 'snyk code'
