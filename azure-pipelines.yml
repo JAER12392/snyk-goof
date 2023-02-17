@@ -24,6 +24,6 @@ steps:
       snyk code test
     continueOnError: true
     displayName: 'snyk code' 
-  
+
 
 
