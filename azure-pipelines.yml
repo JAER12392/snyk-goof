@@ -51,5 +51,5 @@ steps:
       dir
       snyk auth 479e7f58-33d3-470c-a13e-d258edb10092
       snyk code 
-      continueOnError: true
-      displayName: 'snyk code'
+    continueOnError: true
+    displayName: 'snyk code'
