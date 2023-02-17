@@ -49,7 +49,7 @@ steps:
       npm install -g snyk
       snyk -v
       dir
-      snyk auth 479e7f58-33d3-470c-a13e-d258edb10092
+      snyk auth '479e7f58-33d3-470c-a13e-d258edb10092'
       snyk code test
     continueOnError: true
     displayName: 'snyk code'
