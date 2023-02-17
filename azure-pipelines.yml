@@ -43,7 +43,7 @@ steps:
     projectName: 
     severityThreshold
   
-- script: |
+  - script: |
       node -v 
       npm -v
       npm install -g snyk
