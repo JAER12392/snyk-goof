@@ -10,47 +10,20 @@ pool:
   vmImage: windows-2019
 
 steps:
-- script: |
-    npm install
-    npm run build
-  displayName: 'npm install and build'
-
-- task: SnykSecurityScan@1
+- task: NodeTool@0
   inputs:
-    serviceConnectionEndpoint: 'Goof'
-    testType: 'app'
-    severityThreshold: 'critical'
-    monitorWhen: 'always'
-    failOnIssues: false
-
-- script: |
-    docker build -t goof .
-    docker images 
-    docker images | grep goof
-    sudo docker images | grep goof
-  displayName: 'build Docker image'
-
-- task: SnykSecurityScan@1
-  inputs:
-    serviceConnectionEndpoint: 'Goof'
-    testType: 'container'
-    dockerImageName: 'goof'
-    dockerfilePath: 'Dockerfile'
-    monitorWhen: 'always'
-    failOnIssues: false
-    additionalArguments: 
-    organization: 
-    projectName: 
-    severityThreshold
-
-steps:
+    versionSpec: '18.x'
+ #snyk code 
   - script: |
-      node -v 
-      npm -v
-      npm install -g snyk
-      snyk -v
-      dir
-      snyk auth '479e7f58-33d3-470c-a13e-d258edb10092'
+      node - v
+      npm - v
+      npm install - g snyk
+      snyk -v 
+      dir 
+      snyk auth ' bd0a621f-e440-4b09-8791-dd261466fcd0'
       snyk code test
     continueOnError: true
-    displayName: 'snyk code'
+    displayName: 'snyk code' 
+  
+
+
