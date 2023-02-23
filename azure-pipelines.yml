@@ -7,7 +7,7 @@ trigger:
   - master
 
 pool:
-  vmImage: 'Ubuntu-18.04'
+  vmImage: 'Ubuntu-22.04'
 
 steps:
   - script: |
@@ -21,6 +21,7 @@ steps:
     displayName: 'install snyk'
   - script: |
       sudo snyk test
+      sudo snyk monitor --all-projects --org=2749953e-ce09-4245-ac58-f0e74a5fe690
     displayName: 'snyk SCA'
     continueOnError: true
   - script: |
