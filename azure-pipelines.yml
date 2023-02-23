@@ -15,9 +15,9 @@ steps:
     displayName: 'npm install'
   - script: |
       sudo npm install -g snyk
-      # create variable in Pipelines called 'SNYK_TOKEN' and securely save your Snyk token value
+      # create variable in Pipelines called 'SNYK_TOKEN' and securely save your Snyk token value $(SNYK_TOKEN)
       # https://docs.microsoft.com/en-us/azure/devops/pipelines/process/variables
-      sudo snyk auth $(SNYK_TOKEN)
+      sudo snyk auth 9e0b9097-abb4-4f6c-b71f-a17d6d72d536
     displayName: 'install snyk'
   - script: |
       sudo snyk test
